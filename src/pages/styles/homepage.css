@@ -82,6 +82,7 @@
 	flex-basis: 900px;
 	padding-top: 30px;
 	margin-left: -30px;
+	display: none;
 }
 
 .homepage-article {
@@ -89,8 +90,12 @@
 }
 
 .homepage-works {
-	flex-basis: 600px;
+	flex-basis: 100%;
 	padding-top: 30px;
+}
+
+.homepage-git {
+	display: block;
 }
 
 @media (max-width: 1024px) {
@@ -144,7 +149,9 @@
 
 	.homepage-works {
 		flex-basis: auto;
-		margin-left: -25px;
-		margin-right: -25px;
+	}
+
+	.homepage-git {
+		flex-basis: auto;
 	}
 }

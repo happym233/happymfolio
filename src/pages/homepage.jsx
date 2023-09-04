@@ -22,6 +22,7 @@ import SEO from "../data/seo";
 import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
+import GithubDaily from "../components/GithubDaily/githubDaily";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
@@ -187,10 +188,14 @@ const Homepage = () => {
 									</div>
 								))}
 							</div>
+						</div>
 
-							<div className="homepage-works">
-								<Works />
-							</div>
+						<div className="homepage-works">
+							<Works />
+						</div>
+
+						<div className="homepage-git">
+							<GithubDaily />
 						</div>
 
 						<div className="page-footer">

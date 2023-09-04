@@ -7,7 +7,7 @@
 .work {
 	display: flex;
 	padding-bottom: 40px;
-	width: 400px;
+	width: 300px;
 }
 
 .work-image {
@@ -41,4 +41,8 @@
 	padding-top: 20px;
 	text-align: right;
 	color: var(--tertiary-color);
+}
+
+.vertical-timeline::before {
+	width: 2px;
 }

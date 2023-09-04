@@ -6,8 +6,17 @@
 	outline: 2px solid #f4f4f5;
 }
 
+.contain {
+	mix-blend-mode: normal;
+}
+
 .card-container {
 	padding: 30px;
+	padding-bottom: 5px;
+}
+
+.contain-container {
+	padding: 10px;
 	padding-bottom: 5px;
 }
 
@@ -21,9 +30,22 @@
 	color: var(--tertiary-color);
 }
 
+.contain-icon {
+	font-size: 25;
+	color: var(--tertiary-color);
+}
+
+
 .card-title {
 	color: var(--secondary-color);
 	font-size: 14px;
+	padding-left: 20px;
+	font-weight: 650;
+}
+
+.contain-title {
+	color: var(--secondary-color);
+	font-size: 28px;
 	padding-left: 20px;
 	font-weight: 650;
 }

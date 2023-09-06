@@ -1,0 +1,14 @@
+.git-contribute-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .git-contribute-destop {
+        display: none;
+    }
+
+    .git-contribute-mobile {
+        display: block;
+    }
+}

@@ -7,8 +7,12 @@ import {
 	faTwitter,
 	faGithub,
 	faStackOverflow,
+	faLinkedin,
+	faChevronDown,
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+
+import { BsArrowBarDown } from "react-icons/bs";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
@@ -23,14 +27,27 @@ import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 import GithubDaily from "../components/GithubDaily/githubDaily";
+import Skills from "../components/skills/skills";
+import AnimateHeight from "react-animate-height";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
+		window.onscroll = () => {
+			if (window.pageYOffset === 0) {
+				setScrolled(false);
+			} else {
+				setScrolled(true);
+			}
+		};
 	}, []);
 
 	useEffect(() => {
@@ -83,124 +100,145 @@ const Homepage = () => {
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
-					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
+					<div
+						className={
+							scrolled
+								? "homepage-first-page"
+								: "homepage-first-page-full"
+						}
+					>
+						<div className="homepage-logo-container">
+							<div style={logoStyle}>
+								<Logo width={logoSize} link={false} />
+							</div>
+						</div>
+
+						<div className="homepage-container">
+							<div className="homepage-first-area">
+								<div className="homepage-first-area-left-side">
+									<div className="title homepage-title">
+										<span className="homepage-title-hey">
+											<span className="title-word title-word-1">
+												H
+											</span>
+											<span className="title-word title-word-4">
+												e
+											</span>
+											<span className="title-word title-word-3">
+												y
+											</span>
+										</span>
+										, I am{" "}
+										<span className="homepage-title-name">
+											Junteng Ma
+										</span>
+										. <br />
+										{INFO.homepage.title}
+									</div>
+
+									<div className="subtitle homepage-subtitle">
+										{INFO.homepage.description}
+									</div>
+								</div>
+
+								<div className="homepage-first-area-right-side">
+									<div className="homepage-image-container">
+										<div className="homepage-image-wrapper">
+											<img
+												src="homepage.png"
+												alt="about"
+												className="homepage-image"
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="homepage-socials">
+								<a
+									href={INFO.socials.github}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.linkedin}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faLinkedin}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={`mailto:${INFO.main.email}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faMailBulk}
+										className="homepage-social-icon"
+									/>
+								</a>
+							</div>
+						</div>
+						{!scrolled && (
+							<div
+								className="homepage-next-icon"
+								onClick={() => {
+									window.scrollTo({
+										top: 400,
+										behavior: "smooth",
+									});
+								}}
+							>
+								<BsArrowBarDown />
+							</div>
+						)}
+					</div>
+
+					<div className="homepage-teck-skills">
+						<Skills />
+					</div>
+
+					<div className="homepage-projects">
+						<AllProjects />
+					</div>
+
+					<div className="homepage-after-title">
+						<div className="homepage-articles">
+							{myArticles.map((article, index) => (
+								<div
+									className="homepage-article"
+									key={(index + 1).toString()}
+								>
+									<Article
+										key={(index + 1).toString()}
+										date={article().date}
+										title={article().title}
+										description={article().description}
+										link={"/article/" + (index + 1)}
+									/>
+								</div>
+							))}
 						</div>
 					</div>
 
-					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
-								</div>
+					<div className="homepage-git">
+						<GithubDaily />
+					</div>
 
-								<div className="subtitle homepage-subtitle">
-									{INFO.homepage.description}
-								</div>
-							</div>
+					<div className="homepage-works">
+						<Works />
+					</div>
 
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.stackoverflow}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faStackOverflow}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
-						</div>
-
-						<div className="homepage-projects">
-							<AllProjects />
-						</div>
-
-						<div className="homepage-after-title">
-							<div className="homepage-articles">
-								{myArticles.map((article, index) => (
-									<div
-										className="homepage-article"
-										key={(index + 1).toString()}
-									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
-									</div>
-								))}
-							</div>
-						</div>
-
-						<div className="homepage-works">
-							<Works />
-						</div>
-
-						<div className="homepage-git">
-							<GithubDaily />
-						</div>
-
-						<div className="page-footer">
-							<Footer />
-						</div>
+					<div className="page-footer">
+						<Footer />
 					</div>
 				</div>
 			</div>

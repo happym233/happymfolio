@@ -1,3 +1,4 @@
+
 :root {
   --primary-green: green;
   --primary-grey: gray;
@@ -93,21 +94,4 @@ body,
   color: var(--primary-blue);
   font-weight: 900;
 }
-@media (mid-width: 786px) {
-  .experience .container {
-    padding-left: 0;
-  }
-  .experience-wrapper::before {
-    left: 0.5rem;
-    margin-bottom: 1.875rem;
-  }
-  .timeline-block-right {
-    float: none;
-    width: 100%;
-  }
-  .timeline-block-left {
-    float: none;
-    direction: rtl;
-    width: 100%;
-  }
-}
+

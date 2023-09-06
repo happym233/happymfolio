@@ -1,3 +1,5 @@
+
+@import "../../data/styles.css";
 .about-logo-container {
 	display: flex;
 	justify-content: left;
@@ -47,6 +49,32 @@
 	width: 370px;
 }
 
+.about-page {
+	margin-top: 80px;
+	padding-right: 40px;
+}
+
+.about-page-title {
+	font-size: 18px;
+	font-weight: 800;
+	color: var(--primary-color);
+}
+
+.about-page-content {
+	font-size: 15px;
+	color: var(--secondary-color);
+}
+
+.contact-me-link {
+	color: var(--link-color);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.about-page-link {
+	color: var(--link-color);
+}
+
 .about-image-wrapper {
 	display: inline-block;
 	overflow: hidden;
@@ -70,6 +98,10 @@
 }
 
 @media (max-width: 1024px) {
+
+	.about-page {
+		width: 80%
+	}
 	.about-logo {
 		z-index: 100;
 	}
@@ -113,5 +145,9 @@
 
 	.about-image-container {
 		width: 80%;
+	}
+
+	.about-page {
+		width: 80%
 	}
 }

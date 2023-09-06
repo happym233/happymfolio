@@ -5,11 +5,16 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import AllProjects from "../components/projects/allProjects";
+import Skills from "../components/skills/skills";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/projects.css";
+import FullWidthProject from "../components/projects/fullWidthProject";
+import AllFullWidthProjects from "../components/projects/allFullWidthProjects";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
 	useEffect(() => {
@@ -39,25 +44,24 @@ const Projects = () => {
 					</div>
 					<div className="projects-container">
 						<div className="title projects-title">
-							Things I’ve made trying to put my dent in the
-							universe.
+							My <span className="color-link">Projects</span>
 						</div>
 
 						<div className="subtitle projects-subtitle">
-							I've worked on a variety of projects over the years
-							and I'm proud of the progress I've made. Many of
-							these projects are open-source and available for
-							others to explore and contribute to. If you're
-							interested in any of the projects I've worked on,
-							please feel free to check out the code and suggest
-							any improvements or enhancements you might have in
-							mind. Collaborating with others is a great way to
-							learn and grow, and I'm always open to new ideas and
-							feedback.
+							I am a passionate programmer who is eager to work on
+							complex and challenging projects in order to further
+							improve my technical skills. Here are some projects
+							I have developed in the past. I will continue to
+							improve myself and deliver more valuable
+							applications in the future.
+						</div>
+
+						<div className="projects-teck-skills">
+							<Skills />
 						</div>
 
 						<div className="projects-list">
-							<AllProjects />
+							<AllFullWidthProjects />
 						</div>
 					</div>
 					<div className="page-footer">

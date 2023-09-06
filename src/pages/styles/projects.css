@@ -22,6 +22,29 @@
 	padding-top: 120px;
 }
 
+.projects-tech-skills-hint {
+	margin-top: -20px;
+	margin-left: 40px;
+	color: var(--secondary-color);
+}
+
+.projects-subtitle {
+	margin-left: 10px;
+}
+
+.projects-list {
+	margin-top: 30px;
+}
+
+.projects-teck-skills {
+	padding-top: 80px;
+}
+
+
+.color-link {
+	color: var(--link-color);
+}
+
 @media (max-width: 600px) {
 	.projects-container {
 		padding-top: 60px;

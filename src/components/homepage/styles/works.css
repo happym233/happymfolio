@@ -46,3 +46,28 @@
 .vertical-timeline::before {
 	width: 2px;
 }
+
+.timeline-ul {
+	margin: 0;
+    padding: 0;
+	color: var(--secondary-color);
+}
+
+.timeline-ul li {
+    list-style: none;
+}
+
+.timeline-ul li::before {
+    content: "- ";
+}
+
+.timeline-icon-margin {
+	margin-left: -20px;
+}
+
+
+@media (max-width: 1170px) {
+.vertical-timeline::before {
+	display: none;
+}
+}

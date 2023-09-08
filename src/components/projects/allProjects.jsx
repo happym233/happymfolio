@@ -18,30 +18,24 @@ const AllProjects = () => {
 			body={
 				<>
 					<div className="all-projects-container">
-						{INFO.projects.map((project, index) => (
-							<div className="all-projects-project" key={index}>
-								<Project
-									logo={project.logo}
-									title={project.title}
-									description={project.description}
-									linkText={project.linkText}
-									link={project.link}
-								/>
-							</div>
-						))}
-					</div>
-					<div style={{ display: "none" }}>
-						{INFO.projects.map((project, index) => (
-							<div key={index}>
-								<FullWidthProject
-									logo={project.logo}
-									title={project.title}
-									description={project.description}
-									linkText={project.linkText}
-									link={project.link}
-								/>
-							</div>
-						))}
+						{INFO.projects
+							.filter((project) => project.show)
+							.map((project, index) => (
+								<div
+									className="all-projects-project"
+									key={index}
+								>
+									<Project
+										logo={project.logo}
+										techStacks={project.techStacks}
+										title={project.title}
+										description={project.description}
+										linkText={project.linkText}
+										link={project.link}
+										githubLink={project.githubLink}
+									/>
+								</div>
+							))}
 					</div>
 				</>
 			}

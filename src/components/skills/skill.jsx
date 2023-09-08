@@ -3,7 +3,7 @@ import "./styles/skill.css";
 import { useNavigate } from "react-router-dom";
 
 const Skill = (props) => {
-	const { name, imageUrl, clickable } = props;
+	const { name, imageUrl, clickable, redirect } = props;
 	const navigate = useNavigate();
 
 	return (
@@ -11,7 +11,8 @@ const Skill = (props) => {
 			<div
 				className="skill container"
 				onClick={() => {
-					if (clickable) navigate(`/projects/${name}`);
+					if (clickable && redirect) window.location.href = redirect;
+					else if (clickable) navigate(`/projects/${name}`);
 				}}
 			>
 				<img src={imageUrl} alt={name} className="skill-logo" />

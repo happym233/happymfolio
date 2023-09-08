@@ -39,60 +39,73 @@ const TECH = [
 	},
 	{
 		name: "SpringBoot",
-		url: "./techImgs/springboot.png",
+		url: "../techImgs/springboot.png",
 		clickable: true,
 	},
 	{
 		name: ".Net",
-		url: "./techImgs/dotnet.png",
+		url: "../techImgs/dotnet.png",
 		clickable: true,
 	},
 	{
 		name: "Vue.js",
-		url: "./techImgs/vuejs.png",
+		url: "../techImgs/vuejs.png",
 		clickable: true,
 	},
 	{
 		name: "React.js",
-		url: "./techImgs/reactjs.png",
+		url: "../techImgs/reactjs.png",
 		clickable: true,
 	},
 	{
 		name: "MySQL",
-		url: "./techImgs/mysql.png",
+		url: "../techImgs/mysql.png",
 		clickable: true,
 	},
 	{
 		name: "PostgreSQL",
-		url: "./techImgs/postgresql.png",
+		url: "../techImgs/postgresql.png",
 		clickable: true,
 	},
 	{
 		name: "Git",
-		url: "./techImgs/git.png",
+		url: "../techImgs/git.png",
 		clickable: true,
 	},
 	{
 		name: "Ubuntu",
-		url: "./techImgs/ubuntu.png",
+		url: "../techImgs/ubuntu.png",
 	},
 	{
 		name: "Docker",
-		url: "./techImgs/docker.png",
+		url: "../techImgs/docker.png",
 		clickable: true,
 	},
 	{
 		name: "Vim",
-		url: "./techImgs/vim.png",
+		url: "../techImgs/vim.png",
+		clickable: true,
+		redirect: "https://github.com/happym233/vim_setting/blob/main/vimrc",
 	},
 	{
 		name: "AWS",
-		url: "./techImgs/aws.png",
+		url: "../techImgs/aws.png",
+		clickable: true,
+	},
+	{
+		name: "colab",
+		url: "../techImgs/colab.png",
+		clickable: true,
+	},
+	{
+		name: "scikit-learn",
+		url: "../techImgs/scikit-learn.png",
 		clickable: true,
 	},
 	{
 		name: "Pytorch",
-		url: "./techImgs/pytorch.png",
+		url: "../techImgs/pytorch.png",
+		clickable: true,
 	},
 ];
 

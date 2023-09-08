@@ -10,7 +10,8 @@ import { TECH } from "../../assets/techs";
 
 import "./styles/skills.css";
 
-const Skills = () => {
+const Skills = (props) => {
+	const { tech } = props;
 	return (
 		<CardContainer
 			icon={faScrewdriverWrench}
@@ -23,6 +24,7 @@ const Skills = () => {
 								name={tech.name}
 								imageUrl={tech.url}
 								clickable={tech.clickable}
+								redirect={tech.redirect}
 							/>
 						</div>
 					))}

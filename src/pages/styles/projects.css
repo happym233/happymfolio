@@ -22,6 +22,36 @@
 	padding-top: 120px;
 }
 
+.back-container {
+	margin-top: 10px;
+	padding: 10px;
+	height: 100%;
+	color: var(--link-color);
+	font-size: 50px;
+}
+
+.back-container:hover {
+	cursor: pointer;
+}
+
+
+.project-back-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: -30px;
+}
+
+.project-back-title {
+	margin-left: 20px;
+	font-size: 50px;
+}
+
+.project-back-img {
+	margin-left: 40px;
+	width: 60px;
+}
+
 .projects-tech-skills-hint {
 	margin-top: -20px;
 	margin-left: 40px;
@@ -37,7 +67,11 @@
 }
 
 .projects-teck-skills {
-	padding-top: 80px;
+	margin-top: 60px;
+}
+
+.back-skill-container {
+	margin-top: 0;
 }
 
 
@@ -52,5 +86,20 @@
 
 	.projects-project {
 		width: calc(100% / 2);
+	}
+
+
+	.back-container {
+		font-size: 30px;
+	}
+
+	.project-back-title {
+		margin-left: 20px;
+		font-size: 30px;
+	}
+
+	.project-back-img {
+		margin-left: 30px;
+		width: 35px;
 	}
 }

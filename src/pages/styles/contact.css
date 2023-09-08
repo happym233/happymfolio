@@ -36,3 +36,14 @@
 	justify-content: flex-start;
 	align-items: center;
 }
+.link-color {
+	color: var(--link-color);
+}
+
+.contact-wrapper {
+	min-height: 70vh;
+}
+
+.contact-subtitle {
+	min-height: 25vh;
+}

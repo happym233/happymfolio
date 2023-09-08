@@ -2,49 +2,104 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { TECH, findTech } from "../../assets/techs";
 
 import "./styles/fullWidthProject.css";
 
 const FullWidthProject = (props) => {
-	const { logo, title, description, linkText, link } = props;
+	const {
+		date,
+		logo,
+		title,
+		techStacks,
+		description,
+		descriptions,
+		link,
+		githubLink,
+	} = props;
 
 	return (
 		<React.Fragment>
 			<div className="full-width-project">
-				<div className="project">
-					<Link to={link}>
-						<div className="project-container">
-							<div className="project-image">
-								<div className="project-image-container">
+				<div className="full-project">
+					<Link to={link ? link : githubLink}>
+						<div className="full-width-project-container">
+							<div className="full-width-project-image">
+								<div className="full-width-project-image-container">
 									<img src={logo} alt={title} />
 								</div>
 							</div>
-							<div className="project-left-side">
-								<div className="project-date">
-									|&nbsp;&nbsp;&nbsp;{"August, 2023"}
+							<div className="full-width-project-left-side">
+								<div className="full-width-project-date">
+									|&nbsp;&nbsp;&nbsp;{date}
 								</div>
 							</div>
-							<div className="project-title">{title}</div>
-							<div className="project-description">
-								<div className="project-description-text">
+							<div className="full-width-project-title">
+								{title}
+							</div>
+							<div className="full-width-project-techstacks">
+								{techStacks
+									.map((stack) => findTech(stack))
+									.map((stack, idx) => (
+										<div
+											className="full-width-project-tech"
+											key={idx}
+										>
+											<img
+												src={stack.url}
+												alt={stack.name}
+											/>
+										</div>
+									))}
+							</div>
+							<div className="full-width-project-description">
+								<div className="full-width-project-description-text">
 									{description}
 								</div>
 								<ul>
-									<li>des1</li>
-									<li>des2</li>
-									<li>des3</li>
-									<li>des4</li>
+									{descriptions.map((des, index) => (
+										<li key={index}>{des}</li>
+									))}
 								</ul>
 							</div>
-							<div className="project-link">
-								<div className="project-link-icon">
-									<FontAwesomeIcon icon={faLink} />
-								</div>
+						</div>
+						<div className="full-width-project-link">
+							{link && (
+								<div
+									className={"project-link hover-green"}
+									onClick={(e) => {
+										e.preventDefault();
+										window.location.href = link;
+										return null;
+									}}
+								>
+									<div className="project-link-icon">
+										<FontAwesomeIcon icon={faLink} />
+									</div>
 
-								<div className="project-link-text">
-									{linkText}
+									<div className="project-link-text">
+										View Demo
+									</div>
 								</div>
-							</div>
+							)}
+							{githubLink && (
+								<div
+									className={"project-github-link"}
+									onClick={(e) => {
+										e.preventDefault();
+										window.location.href = githubLink;
+										return null;
+									}}
+								>
+									<div className="project-link-icon">
+										<FontAwesomeIcon icon={faLink} />
+									</div>
+
+									<div className="project-link-text">
+										View Github
+									</div>
+								</div>
+							)}
 						</div>
 					</Link>
 				</div>
